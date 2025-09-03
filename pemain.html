@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Putra Asker - Pemain</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #120b3a;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f1e54; /* biru navy elegan */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      padding: 10px 25px;
+      position: relative;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover glowing */
+    .navbar ul li a:hover {
+      background: #ffcc00;
+      color: #000;
+      box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00, 0 0 45px #ffcc00;
+      transform: scale(1.05);
+    }
+
+    /* Link aktif */
+    .navbar ul li a.active {
+      background: none;
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    /* Tombol hamburger */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .players {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .player {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      width: 180px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .player:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 
+        0 8px 16px rgba(0,0,0,0.25),
+        0 0 20px #ffcc00,
+        0 0 40px #ffcc00,
+        0 0 60px #ffcc00;
+    }
+
+    .player img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .player h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .player p {
+      margin: 3px 0;
+      font-size: 14px;
+    }
+
+    .desc {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: #0f1e54;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .player {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .player {
+        width: 100%;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="putra_asker.png" alt="Logo Tim"></div>
+
+    <!-- Tombol Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+    <ul id="nav-links">
+      <li><a href="index.html" class="active">Beranda</a></li>
+      <li><a href="pemain.html">Pemain</a></li>
+      <li><a href="jadwal.html">Prestasi</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Pemain -->
+  <div class="container">
+    <h2>Formasi 4-3-3</h2>
+    <div class="players">
+
+      <!-- Penyerang -->
+      <div class="row">
+        <div class="player">
+          <img src="fian.jpeg" alt="Saddil Ramdhani">
+          <h3>Fian Alghif</h3>
+          <p>No: 99</p>
+          <p>Posisi: Winger</p>
+          <div class="desc">Winger lincah dengan dribel cepat dan crossing akurat.</div>
+        </div>
+        <div class="player">
+          <img src="farhan.jpeg" alt="Dendy Sulistyawan">
+          <h3>Farhan Al Hakim</h3>
+          <p>No: 11</p>
+          <p>Posisi: Striker</p>
+          <div class="desc">Striker tajam dengan insting mencetak gol tinggi.</div>
+        </div>
+        <div class="player">
+          <img src="abay.jpeg" alt="Ramadhan Sananta">
+          <h3>Bayu Saputra</h3>
+          <p>No: 9</p>
+          <p>Posisi: Winger</p>
+          <div class="desc">Winger muda dengan kecepatan dan tembakan keras.</div>
+        </div>
+      </div>
+
+      <!-- Gelandang -->
+      <div class="row">
+        <div class="player">
+          <img src="nardi.jpeg" alt="Egy Maulana">
+          <h3>Adi Sunardi</h3>
+          <p>No: 5</p>
+          <p>Posisi: Gelandang</p>
+          <div class="desc">Playmaker kreatif dengan visi permainan luar biasa.</div>
+        </div>
+        <div class="player">
+          <img src="asep.jpeg" alt="Witan Sulaeman">
+          <h3>Asep Priyanto</h3>
+          <p>No: 17</p>
+          <p>Posisi: Gelandang</p>
+          <div class="desc">Motor serangan cepat, rajin bergerak tanpa bola.</div>
+        </div>
+        <div class="player">
+          <img src="repan.jpeg" alt="Marc Klok">
+          <h3>Repan Alfansyah</h3>
+          <p>No: 10</p>
+          <p>Posisi: Gelandang</p>
+          <div class="desc">Pengatur tempo, piawai dalam tendangan bebas.</div>
+        </div>
+      </div>
+
+      <!-- Bek -->
+      <div class="row">
+        <div class="player">
+          <img src="nafis.jpeg" alt="Nafis">
+          <h3>Nafis</h3>
+          <p>No: 91</p>
+          <p>Posisi: Bek Kanan</p>
+          <div class="desc">Bek kanan dengan kecepatan tinggi dan kemampuan overlap menyerang.</div>
+        </div>
+        <div class="player">
+          <img src="reja.jpeg" alt="Elkan Baggott">
+          <h3>Reza Hidayat</h3>
+          <p>No: 14</p>
+          <p>Posisi: Bek Tengah</p>
+          <div class="desc">Bek tangguh dengan postur tinggi, spesialis duel udara.</div>
+        </div>
+        <div class="player">
+          <img src="utup.jpeg" alt="Jordi Amat">
+          <h3>Utup Panggabean</h3>
+          <p>No: 3</p>
+          <p>Posisi: Bek Tengah</p>
+          <div class="desc">Pengalaman internasional, pengatur lini belakang dengan ketenangan tinggi.</div>
+        </div>
+        <div class="player">
+          <img src="irul.jpeg" alt="Pratama Arhan">
+          <h3>Irul Hadi</h3>
+          <p>No: 01</p>
+          <p>Posisi: Bek Kiri</p>
+          <div class="desc">Dikenal dengan lemparan jauh dan crossing akurat.</div>
+        </div>
+      </div>
+
+      <!-- Kiper -->
+      <div class="row">
+        <div class="player">
+          <img src="ari.jpeg" alt="Nadeo Argawinata">
+          <h3>Arieka</h3>
+          <p>No: 33</p>
+          <p>Posisi: Kiper</p>
+          <div class="desc">Penjaga gawang utama dengan refleks cepat dan penguasaan bola yang baik.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Putra Asker FC | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
